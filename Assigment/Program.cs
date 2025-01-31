@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Security.Cryptography;
+using System.Threading;
 using static Assigment.ListGenerators;
 
 
@@ -280,10 +281,134 @@ namespace Assigment
             //}
 
             #endregion
-           
+
             #endregion
 
 
+            #region LINQ - Ordering Operators
+
+
+            #region Q 1. Sort a list of products by name
+
+            //var result = ProductList.OrderBy(p => p.ProductName).ToList();
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Q2. Uses a custom comparer to do a case-insensitive sort of the words in an array.
+
+
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+
+            //var sortedArr = Arr
+            //                  .OrderBy(word => word, StringComparer.OrdinalIgnoreCase)
+            //                  .ToArray();
+
+            //foreach (var item in sortedArr)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Q 3. Sort a list of products by units in stock from highest to lowest.
+
+            //var result = ProductList
+            //                    .OrderByDescending(p => p.UnitsInStock)
+            //                    .ToList();
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Q 4. Sort a list of digits, first by length of their name, and then alphabetically by the name itself.
+
+            // string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+
+            //var result = Arr
+            //            .OrderBy(word => word.Length)
+            //            .ThenBy(word => word)
+            //            .ToArray();
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            #endregion
+
+            #region Q5. Sort first by-word length and then by a case-insensitive sort of the words in an array.
+
+
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+
+            //var result = Arr
+            //                .OrderBy(word => word.Length)
+            //                .ThenBy(word => word, StringComparer.OrdinalIgnoreCase)
+            //                .ToArray();
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Q 6. Sort a list of products, first by category, and then by unit price, from highest to lowest.
+
+            //var result = ProductList.OrderBy(p => p.Category).ThenByDescending(p=>p.UnitPrice);
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+
+            //}
+
+            #endregion
+
+            #region Q 7. Sort first by-word length and then by a case-insensitive descending sort of the words in an array.
+
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+
+            //var result= Arr
+            //            .OrderBy(x=>x.Length)
+            //            .ThenByDescending(x => x, StringComparer.OrdinalIgnoreCase)
+            //           .ToArray();
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Q 8. Create a list of all digits in the array whose second letter is 'i' that is reversed from the order in the original array.
+           
+            
+            //string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+
+            //var result = Arr
+            //            .Where(word => word.Length > 1 && word[1] == 'i')
+            //            .Reverse()
+            //            .ToList();
+           
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+
+            //}
+
+            #endregion
+
+
+
+            #endregion
         }
     }
 }
