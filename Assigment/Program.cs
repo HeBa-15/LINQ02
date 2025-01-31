@@ -48,7 +48,7 @@ namespace Assigment
 
 
 
-           // String[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            // String[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
             //var result = Arr
             //.Select((name, index) => new { Name = name, Value = index })
@@ -63,6 +63,44 @@ namespace Assigment
 
 
             #endregion
+
+            #endregion
+
+
+            #region  LINQ - Element Operators
+
+            #region Q 1. Get first Product out of Stock 
+
+            //var result = ProductList.First(product => product.UnitsInStock == 0);
+
+            //Console.WriteLine(result);
+
+
+            #endregion
+
+            #region Q 2. Return the first product whose Price > 1000, unless there is no match, in which case null is returned.
+
+            //var result = ProductList.FirstOrDefault(p => p.UnitPrice>1000m);
+            //Console.WriteLine(result);
+
+            #endregion
+
+
+            #region Q 3. Retrieve the second number greater than 5
+            
+
+           // int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+           // var result = Arr
+           //.Where(n => n > 5)
+           //.OrderBy(n => n)
+           //.Skip(1)
+           //.FirstOrDefault();
+
+           // Console.WriteLine(result);
+           
+            #endregion
+
 
             #endregion
         }
