@@ -1,11 +1,28 @@
 ﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography;
 using System.Threading;
 using static Assigment.ListGenerators;
 
 
 namespace Assigment
+
 {
+
+
+    class CustomProductComparer : IEqualityComparer<Product>
+    {
+        public bool Equals(Product? x, Product? y)
+            => x.ProductID == y.ProductID
+            && x.ProductName == y.ProductName
+            && x.UnitPrice == y.UnitPrice
+            && x.UnitsInStock == y.UnitsInStock
+            && x.Category == y.Category;
+
+        public int GetHashCode([DisallowNull] Product obj)
+            => HashCode.Combine(obj.ProductID, obj.ProductName, obj.UnitPrice, obj.UnitsInStock, obj.Category);
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -515,6 +532,79 @@ namespace Assigment
 
             #endregion
 
+
+
+
+            #endregion
+
+            #region LINQ - Set Operators
+
+            #region Q 1. Find the unique Category names from Product List
+
+            //var result = ProductList.Union(ProductList02, new CustomProductComparer());
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Q 2. Produce a Sequence containing the unique first letter from both product and customer names.
+
+            //var result = ProductList
+            //           .Select(p => p.ProductName[0])
+            //           .Union(CustomerList.Select(c => c.CustomerName[0]))
+            //           .Distinct()
+            //           .ToList();
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Q 3. Create one sequence that contains the common first letter from both product and customer names.
+
+            //var result = ProductList
+            //           .Select(p => p.ProductName[0])
+            //           .Intersect(CustomerList.Select(c => c.CustomerName[0]))
+            //           .ToList();
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Q 4. Create one sequence that contains the first letters of product names that are not also first letters of customer names.
+
+            //var result = ProductList
+            //            .Select(p => p.ProductName[0])
+            //            .Except(CustomerList.Select(c => c.CustomerName[0]))
+            //            .ToList();
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Q 5. Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates
+
+            //var result = ProductList
+            //            .Select(p => p.ProductName.Length >= 3 ? p.ProductName.Substring(p.ProductName.Length - 3) : p.ProductName)
+            //            .Concat(CustomerList.Select(c => c.CustomerName.Length >= 3 ? c.CustomerName.Substring(c.CustomerName.Length - 3) : c.CustomerName))
+            //            .ToList();
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
 
 
 
